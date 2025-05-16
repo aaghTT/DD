@@ -208,3 +208,59 @@ body {
     font-size: 1rem;
     line-height: 1.5;
 }
+
+/* Стили для раздела с тортами */
+.cakes_h1{
+    text-align: center;
+}
+.cakes {
+    background-color: #fdf6f0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.cake-card {
+    color: #2C1810;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    width: 280px;
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    -webkit-transition: transform 0.3s ease;
+    -moz-transition: transform 0.3s ease;
+    -ms-transition: transform 0.3s ease;
+    -o-transition: transform 0.3s ease;
+}
+
+.cake-card:hover {
+    transform: translateY(-10px);
+}
+
+.cake-card h3 {
+
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.cake-price {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.order-btn {
+    background-color: #2C1810;
+    color:#fdf6f0;
+    font-family: 'Playfair Display', serif;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
