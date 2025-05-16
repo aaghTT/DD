@@ -152,10 +152,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Playfair Display', serif;
-
-
-
-
+    padding-top: 80px; /* To account for fixed header */
 
 /* Стили для блока "О нас" */
 .about {
@@ -207,4 +204,5 @@ body {
 .feature-text {
     font-size: 1rem;
     line-height: 1.5;
+}
 }
