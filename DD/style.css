@@ -177,11 +177,8 @@ body {
     padding: 0;
     font-family: 'Playfair Display', serif;
     background-color:#fdf6f0;
+    padding-top: 80px; /* To account for fixed header */
 }
-
-
-
-
 /* Стили для блока "О нас" */
 .about {
     background-color: #2C1810;
@@ -233,7 +230,6 @@ body {
     font-size: 1rem;
     line-height: 1.5;
 }
-
 /* Стили для раздела с тортами */
 .cakes_h1{
     text-align: center;
