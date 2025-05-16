@@ -24,29 +24,38 @@
         <input type="radio" name="slider" id="slide2">
         <input type="radio" name="slider" id="slide3">
         
-        <div class="slides">
+        <div class="slides-container">
             <div class="slide">
-                <img src="pages/t1.png" alt="Торт 1">
+                <div class="slide-image-container">
+                    <img src="pages/t1.png" alt="Торт 1">
+                </div>
+                <div class="slide-overlay"></div>
                 <div class="slide-content">
                     <h2 class="slide-title">Наполеон</h2>
                     <p class="slide-description">Воздушные слои теста с бархатистым кремом, тающие во рту</p>
                 </div>        
             </div>
+            
             <div class="slide">
-                <img src="pages/t2.png" alt="Торт 2">
+                <div class="slide-image-container">
+                    <img src="pages/t2.png" alt="Торт 2">
+                </div>
+                <div class="slide-overlay"></div>
                 <div class="slide-content">
                     <h2 class="slide-title">Красный бархат</h2>
-                    <p class="slide-description">Сочный бисквит с нежным сливочным сыром и шелковистым кремом, украшенный глазурью</p>
+                    <p class="slide-description">Сочный бисквит с нежным сливочным сыром и шелковистым кремом</p>
                 </div>
-        
             </div>
+            
             <div class="slide">
-                <img src="pages/t3.png" alt="Торт 3">
+                <div class="slide-image-container">
+                    <img src="pages/t3.png" alt="Торт 3">
+                </div>
+                <div class="slide-overlay"></div>
                 <div class="slide-content">
                     <h2 class="slide-title">Морковный торт</h2>
-                    <p class="slide-description">Нежная морковная основа с ароматными специями и крем-чизом, украшенный ореховой крошкой</p>
+                    <p class="slide-description">Нежная морковная основа с ароматными специями и крем-чизом</p>
                 </div>
-        
             </div>
         </div>
         
@@ -56,7 +65,9 @@
             <label for="slide3"></label>
         </div>
     </div>
+       
     <div class="container">
+        <link rel="stylesheet" href="cakes.css">
         <h1 class="cakes_h1">Торты</h1>
         <div class="cakes" id="cakes">
             <div class="cake-card">
@@ -81,7 +92,7 @@
             </div>
             
             <div class="cake-card">
-                <img src="pages/t6.png" alt="Японский чизкейк">
+                <img src="pages/t7.png" alt="Японский чизкейк">
                 <h3>Японский чизкейк</h3>
                 <div class="cake-price">2000 руб/кг</div>
                 <button class="order-btn">Оформить заказ</button>

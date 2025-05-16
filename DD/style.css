@@ -1,37 +1,50 @@
 /* Основные стили слайдера */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .slider {
     position: relative;
     width: 100%;
-    max-width: 1920px; /* Максимальная ширина как у вашего изображения */
-    margin: 0 auto;
+    height: 80vh; /* Фиксированная высота */
+    max-height: 800px;
     overflow: hidden;
-    height: auto; /* Высота будет определяться пропорциями изображения */
-    aspect-ratio: 16/9; /* Соотношение сторон 16:9 (1920x1080) */
+    margin: 0 auto;
 }
 
-.slides {
+.slides-container {
     display: flex;
+    height: 100%;
     transition: transform 0.5s ease-in-out;
 }
 
+
 .slide {
-    position: relative; /* Это важно для позиционирования затемнения и текста */
-    width: 100%;
-    flex-shrink: 0;
-}
-
-.slide img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: contain;
     position: relative;
-    z-index: 0;
+    min-width: 100%;
+    height: 100%;
 }
 
-/* Затемнение */
-.slide::after {
-    content: '';
+.slide-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slide-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+
+.slide-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -49,45 +62,49 @@
     transform: translate(-50%, -50%);
     color: white;
     text-align: center;
-    z-index: 2; /* Должен быть выше затемнения */
+    z-index: 2;
     width: 80%;
-    max-width: 800px;
-}
-
-
+    max-width: 800px;}
 .controls {
     position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 30px;
+    left: 0;
+    right: 0;
     display: flex;
+    justify-content: center;
     gap: 10px;
-    z-index: 10;
+    z-index: 10; /* Убедитесь, что z-index выше других элементов */
 }
 
+
 .controls label {
-    width: 12px;
-    height: 12px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.5);
     cursor: pointer;
     transition: background 0.3s;
 }
 
+.controls label:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+
 input[type="radio"] {
     display: none;
 }
 
 /* Активные точки */
-#slide1:checked ~ .slides {
-    transform: translateX(0);
+#slide1:checked ~ .slides-container {
+    transform: translateX(0%);
 }
 
-#slide2:checked ~ .slides {
+#slide2:checked ~ .slides-container {
     transform: translateX(-100%);
 }
 
-#slide3:checked ~ .slides {
+#slide3:checked ~ .slides-container {
     transform: translateX(-200%);
 }
 
@@ -114,12 +131,19 @@ input[type="radio"] {
 
 @media (max-width: 768px) {
     .slider {
-        aspect-ratio: 4/3; 
+        height: 60vh;
+        max-height: 500px;
     }
+    
+    .controls {
+        bottom: 15px;
+    }
+    
     .controls label {
         width: 10px;
         height: 10px;
     }
+    
     .slide-title {
         font-size: 1.8rem;
     }
@@ -152,7 +176,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Playfair Display', serif;
-
+    background-color:#fdf6f0;
+}
 
 
 
