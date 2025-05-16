@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chocolate Paradise</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <a href="/" class="logo">Chocolate Paradise</a>
+        <nav class="header_nav">
+            <button class="button">Оформить заказ</button>
+            <a href="#home" class="nav__link">Главная</a>
+            <a href="#cakes" class="nav__link">Торты</a>
+            <a href="#about" class="nav__link">О нас</a>
+            <a href="#contacts" class="nav__link">Контакты</a>
+        </nav>
+    </header>
+    
+    <div class="slider" id="home">
+        <input type="radio" name="slider" id="slide1" checked>
+        <input type="radio" name="slider" id="slide2">
+        <input type="radio" name="slider" id="slide3">
+        
+        <div class="slides">
+            <div class="slide">
+                <img src="pages/t1.png" alt="Торт 1">
+                <div class="slide-content">
+                    <h2 class="slide-title">Наполеон</h2>
+                    <p class="slide-description">Воздушные слои теста с бархатистым кремом, тающие во рту</p>
+                </div>        
+            </div>
+            <div class="slide">
+                <img src="pages/t2.png" alt="Торт 2">
+                <div class="slide-content">
+                    <h2 class="slide-title">Красный бархат</h2>
+                    <p class="slide-description">Сочный бисквит с нежным сливочным сыром и шелковистым кремом, украшенный глазурью</p>
+                </div>
+        
+            </div>
+            <div class="slide">
+                <img src="pages/t3.png" alt="Торт 3">
+                <div class="slide-content">
+                    <h2 class="slide-title">Морковный торт</h2>
+                    <p class="slide-description">Нежная морковная основа с ароматными специями и крем-чизом, украшенный ореховой крошкой</p>
+                </div>
+        
+            </div>
+        </div>
+        
+        <div class="controls">
+            <label for="slide1"></label>
+            <label for="slide2"></label>
+            <label for="slide3"></label>
+        </div>
+    </div>
+    <div class="about" id="about">
+        <div class="about-content">
+            <h2 class="about-title">Наша история</h2>
+            <p class="about-description">В сердце города расположилась кондитерская "Chocolate Paradise", где каждый десерт — это маленькое произведение искусства. Наши мастер-кондитеры создают неповторимые лакомства, вдохновленные путешествиями. Здесь каждый посетитель окунается в атмосферу сладких грез.</p>
+            
+            <div class="about-features">
+                <div class="feature">
+                    <h3 class="feature-title">Ручная работа</h3>
+                    <p class="feature-text">Каждый кусочек изготовлен с особой тщательностью.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3 class="feature-title">Свежесть</h3>
+                    <p class="feature-text">Мы используем только самые свежие ингредиенты.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3 class="feature-title">Индивидуальный подход</h3>
+                    <p class="feature-text">Создаем эксклюзивные десерты для ваших особенных моментов.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/slider.js"></script>
+</body>
+</html>
