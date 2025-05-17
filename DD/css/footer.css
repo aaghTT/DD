@@ -1,0 +1,157 @@
+/* Футер */
+.footer {
+    background-color: #2C1810;
+    color: #FDF6F0;
+    padding: 50px 20px 25px;
+    font-family: 'Playfair Display', serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.footer-contacts,
+.footer-social {
+    flex: 1;
+}
+
+.footer-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.footer-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 8px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.social-link {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Иконки для десктопов/планшетов */
+.vk-link {
+    background-image: url('socials/vk.svg');
+}
+.vk-link:hover {
+    background-image: url('socials/vk2.svg');
+    transform: translateY(-3px);
+}
+
+.tg-link {
+    background-image: url('socials/tg.svg');
+}
+.tg-link:hover {
+    background-image: url('socials/tg2.svg');
+    transform: translateY(-3px);
+}
+
+.insta-link {
+    background-image: url('socials/inst.svg');
+}
+.insta-link:hover {
+    background-image: url('socials/inst2.svg');
+    transform: translateY(-3px);
+}
+
+.footer-copyright {
+    text-align: center;
+    padding-top: 25px;
+    color: #6B4F44;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+/* Мобильная версия */
+@media (max-width: 767px) {
+    .footer {
+        padding: 40px 20px 20px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .footer-contacts,
+    .footer-social {
+        text-align: left;
+    }
+    
+    .footer-title {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+    
+    .footer-text {
+        font-size: 1rem;
+    }
+    
+    .social-icons {
+        gap: 1px;
+        margin-top: 10px;
+    }
+    
+    /* Иконки для мобильных */
+    .vk-link {
+        background-image: url('socials/vk_mini.svg');
+    }
+    .vk-link:hover {
+        background-image: url('socials/vk_mini2.svg');
+    }
+    
+    .tg-link {
+        background-image: url('socials/tg_mini.svg');
+    }
+    .tg-link:hover {
+        background-image: url('socials/tg_mini2.svg');
+    }
+    
+    .insta-link {
+        background-image: url('socials/inst_mini.svg');
+    }
+    .insta-link:hover {
+        background-image: url('socials/inst_mini2.svg');
+    }
+}
+
+/* Планшетная версия */
+@media (min-width: 768px) and (max-width: 991px) {
+    .footer-content {
+        flex-wrap: wrap;
+    }
+    
+    .footer-contacts,
+    .footer-social {
+        flex: 0 0 45%;
+        margin-bottom: 30px;
+    }
+    
+    .social-link {
+        width: 36px;
+        height: 36px;
+    }
+}
