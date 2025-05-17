@@ -1,0 +1,287 @@
+/* Основные стили слайдера */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.slider {
+    position: relative;
+    width: 100%;
+    height: 105vh; /* Фиксированная высота */
+    max-height: 800px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.slides-container {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+
+.slide {
+    position: relative;
+    min-width: 100%;
+    height: 100%;
+}
+
+.slide-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slide-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+
+.slide-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.72);
+    z-index: 1;
+}
+
+/* Текст поверх слайда */
+.slide-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 2;
+    width: 80%;
+    max-width: 800px;}
+.controls {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 10; /* Убедитесь, что z-index выше других элементов */
+}
+
+
+.controls label {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.controls label:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+
+input[type="radio"] {
+    display: none;
+}
+
+/* Активные точки */
+#slide1:checked ~ .slides-container {
+    transform: translateX(0%);
+}
+
+#slide2:checked ~ .slides-container {
+    transform: translateX(-100%);
+}
+
+#slide3:checked ~ .slides-container {
+    transform: translateX(-200%);
+}
+
+/* Стиль для активной точки */
+#slide1:checked ~ .controls label:nth-child(1),
+#slide2:checked ~ .controls label:nth-child(2),
+#slide3:checked ~ .controls label:nth-child(3) {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+
+.slide-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.slide-description {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+
+@media (max-width: 768px) {
+    .slider {
+        height: 60vh;
+        max-height: 500px;
+    }
+    
+    .controls {
+        bottom: 15px;
+    }
+    
+    .controls label {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .slide-title {
+        font-size: 1.8rem;
+    }
+    
+    .slide-description {
+        font-size: 1rem;
+    }
+    .about-title {
+        font-size: 2rem;
+    }
+    
+    .about-description {
+        font-size: 1rem;
+    }
+
+    .about-features {
+        flex-direction: column; /* Элементы в столбик */
+        align-items: center; /* Центрирование (опционально) */
+        gap: 5px;
+    }
+
+    .feature {
+        min-width: 100%; /* Занимает всю ширину */
+        max-width: 100%; /* Убираем ограничение */
+        padding: 5px; /* Уменьшаем отступы для мобильных */
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+    background-color:#fdf6f0;
+    padding-top: 80px; /* To account for fixed header */
+}
+/* Стили для блока "О нас" */
+.about {
+    background-color: #2C1810;
+    padding: 30px 15px;
+    text-align: center;
+    color: #f9f3e9;
+}
+
+.about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.about-description {
+    font-size: 1.2rem;
+    line-height: 2;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.about-features {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px; /* Отступ между элементами */
+}
+
+.feature {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    padding: 15px 10px;
+}
+
+.feature-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.feature-text {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+/* Стили для раздела с тортами */
+.cakes_h1{
+    text-align: center;
+}
+.cakes {
+    background-color: #fdf6f0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.cake-card {
+    color: #2C1810;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    width: 280px;
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    -webkit-transition: transform 0.3s ease;
+    -moz-transition: transform 0.3s ease;
+    -ms-transition: transform 0.3s ease;
+    -o-transition: transform 0.3s ease;
+}
+
+.cake-card:hover {
+    transform: translateY(-10px);
+}
+
+.cake-card h3 {
+
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.cake-price {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.order-btn {
+    background-color: #2C1810;
+    color:#fdf6f0;
+    font-family: 'Playfair Display', serif;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}

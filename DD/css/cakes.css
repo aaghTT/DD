@@ -61,3 +61,12 @@
     font-size: 1em;
     transition: background-color 0.3s ease;
 }
+@media (max-width: 768px) {
+    .cakes{
+        position:center;
+        flex-direction: column; 
+    }
+    .cake-card{
+        position: 50%;
+    }
+}
