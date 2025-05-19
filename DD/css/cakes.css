@@ -1,34 +1,37 @@
-
 /* Стили для раздела с тортами */
-.cakes_h1{
+.cakes_h1 {
     text-align: center;
+    margin-bottom: 30px;
 }
+
 .cakes {
     background-color: #fdf6f0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: auto;
+    gap: 30px;
+    padding: 20px 0;
 }
+
 .cake-card {
     color: #2C1810;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     width: 280px;
-    box-sizing: border-box; /* Учитывает padding в общей ширине */
-    width: 280px;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
     transition: transform 0.3s ease;
+    overflow: hidden;
 }
 
 .cake-card img {
     width: 100%;
-    height: auto;
-    max-height: 180px; /* Можно настроить */
-    object-fit: cover; /* или contain */
-    border-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 15px;
+    display: block;
 }
 
 .cake-card:hover {
@@ -36,9 +39,9 @@
 }
 
 .cake-card h3 {
-
-    margin-bottom: 15px;
+    margin: 0 0 15px 0;
     font-size: 1.5em;
+    padding: 0 10px;
 }
 
 .cake-price {
@@ -48,11 +51,8 @@
 }
 
 .order-btn {
-    bottom: 0;
-    left: 0;
-    right: 0;
     background-color: #2C1810;
-    color:#fdf6f0;
+    color: #fdf6f0;
     font-family: 'Playfair Display', serif;
     border: none;
     padding: 10px 20px;
@@ -60,13 +60,79 @@
     cursor: pointer;
     font-size: 1em;
     transition: background-color 0.3s ease;
+    width: 80%;
+    margin: 0 auto;
+    display: block;
 }
+
+/* Стили для стрелочки */
+.toggle-section {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    background-color: #fdf6f0;
+    will-change: transform;
+    transition: transform 0.3s ease;
+}
+
+.toggle-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    margin: 0 auto;
+    display: block;
+}
+
+.arrow-icon {
+    will-change: transform;
+    width: 24px;
+    height: 24px;
+    display: block;
+    background-image: url('Vector.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin: 0 auto;
+}
+
+/* Стили для скрытых тортов */
+.hidden-cakes {
+    max-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    will-change: max-height;
+    transform: translateZ(0);
+    gap: 30px;
+    background-color: #fdf6f0;
+}
+
+.hidden-cakes.show {
+    max-height: 2000px;
+    padding: 20px 0;
+}
+
+.toggle-section.expanded .arrow-icon {
+    transform: rotate(180deg);
+}
+
+/* Адаптивность */
 @media (max-width: 768px) {
-    .cakes{
-        position:center;
-        flex-direction: column; 
+    .cakes {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
     }
-    .cake-card{
-        position: 50%;
+    
+    .cake-card {
+        width: 90%;
+        max-width: 280px;
+    }
+    
+    .cake-card img {
+        height: 180px;
     }
 }
