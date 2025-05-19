@@ -1,12 +1,14 @@
 .cakes_h1 {
     text-align: center;
     margin-bottom: 30px;
+    font-family: 'Playfair Display', serif;
+    color: #2C1810;
 }
 
 .cakes {
     background-color: #fdf6f0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(278px, 1fr));
     gap: 30px;
     padding: 20px 5%;
     width: 90%;
@@ -17,18 +19,18 @@
 .cake-card {
     color: #2C1810;
     background-color: white;
-    border-radius: 15px;
+    border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
-    height: 500px; /* Фиксированная высота карточки */
+    height: 360px;
     transition: transform 0.3s ease;
     overflow: hidden;
+    font-family: 'Playfair Display', serif;
 }
 
-/* Контейнер для изображения (ровно половина высоты карточки) */
 .cake-image-container {
-    height: 50%;
+    height: 192px;
     width: 100%;
     overflow: hidden;
 }
@@ -40,24 +42,28 @@
     display: block;
 }
 
-/* Текстовая часть карточки */
 .cake-content {
-    padding: 20px;
+    padding: 7px; 
     display: flex;
     flex-direction: column;
-    height: 50%;
+    height: calc(360px - 192px);
     box-sizing: border-box;
+    justify-content: space-between;
+    text-align: left; /* Выравнивание по левому краю */
 }
 
 .cake-card h3 {
-    margin: 0 0 15px 0;
+    margin: 0 0 2px 0; /* Уменьшил нижний отступ */
     font-size: 1.5em;
+    font-weight: 700;
+    text-align: left; /* Выравнивание по левому краю */
 }
 
 .cake-price {
     font-size: 1.3em;
     font-weight: bold;
-    margin: 15px 0;
+    text-align: left; /* Выравнивание по левому краю */
+    margin: 2px 0; /* Уменьшил отступы */
 }
 
 .order-btn {
@@ -65,21 +71,28 @@
     color: #fdf6f0;
     font-family: 'Playfair Display', serif;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 15px;
     border-radius: 25px;
     cursor: pointer;
     font-size: 1em;
+    font-weight: 700;
     transition: background-color 0.3s ease;
-    width: 80%;
-    margin: auto auto 0 auto;
+    width: 90%;
+    margin: 0 auto; /* Изменил отступы */
     display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.order-btn:hover {
+    background-color: #3a2015;
 }
 
 .cake-card:hover {
     transform: translateY(-10px);
 }
 
-/* Стили для стрелочки (остаются без изменений) */
+/* Toggle section styles remain the same */
 .toggle-section {
     width: 100%;
     text-align: center;
@@ -125,12 +138,11 @@
     transform: rotate(180deg);
 }
 
-/* Стили для скрытых тортов */
 .hidden-cakes {
     max-height: 0;
     overflow: hidden;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(278px, 1fr));
     gap: 30px;
     background-color: #fdf6f0;
     padding: 0 5%;
@@ -145,7 +157,6 @@
     padding: 20px 5%;
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
     .cakes, .hidden-cakes {
         grid-template-columns: 1fr;
@@ -159,6 +170,18 @@
     }
     
     .cake-image-container {
-        height: 250px;
+        height: auto;
+        aspect-ratio: 278/192;
+    }
+    
+    .cake-content {
+        height: auto;
+        padding: 15px;
+    }
+
+    .order-btn {
+        width: 95%; /* Еще шире на мобильных */
+        padding: 10px 5px; /* Меньше отступы */
+        font-size: 0.9em; /* Чуть меньше размер шрифта */
     }
 }
