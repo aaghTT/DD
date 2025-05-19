@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const container = document.querySelector('.container');
 
     // Настройки анимации
-    const ANIMATION_DURATION = 600; // Увеличили длительность анимации
-    const SCROLL_DELAY = 100; // Задержка перед скроллом
+    const ANIMATION_DURATION = 600;
+    const SCROLL_DELAY = 100;
 
     if (toggleButton) {
         let isAnimating = false;
@@ -19,42 +19,20 @@ document.addEventListener('DOMContentLoaded', function() {
             const isExpanded = toggleSection.classList.toggle('expanded');
             
             if (isExpanded) {
-                // 1. Перемещаем стрелку вниз
                 container.appendChild(toggleSection);
-                
-                // 2. Плавное появление контента
                 hiddenCakes.style.transition = `max-height ${ANIMATION_DURATION}ms ease, padding ${ANIMATION_DURATION}ms ease`;
                 hiddenCakes.classList.add('show');
                 
-                // 3. Плавный поворот стрелки
-                arrowIcon.style.transition = `transform ${ANIMATION_DURATION}ms ease-out`;
-                arrowIcon.style.transform = 'rotate(180deg)';
-                
-                // 4. Плавная прокрутка с задержкой
                 setTimeout(() => {
-                    toggleSection.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'nearest'
-                    });
+                    toggleSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                     isAnimating = false;
                 }, SCROLL_DELAY);
             } else {
-                // 1. Плавный поворот стрелки
-                arrowIcon.style.transition = `transform ${ANIMATION_DURATION}ms ease-out`;
-                arrowIcon.style.transform = 'rotate(0deg)';
+                toggleSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                 
-                // 2. Плавная прокрутка вверх
-                toggleSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'nearest'
-                });
-                
-                // 3. Плавное исчезновение контента с задержкой
                 setTimeout(() => {
-                    hiddenCakes.style.transition = `max-height ${ANIMATION_DURATION}ms ease, padding ${ANIMATION_DURATION}ms ease`;
                     hiddenCakes.classList.remove('show');
                     
-                    // 4. Возвращаем стрелку на место после анимации
                     setTimeout(() => {
                         const cakes = document.querySelector('.cakes');
                         cakes.insertAdjacentElement('afterend', toggleSection);
@@ -65,10 +43,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Проверка загрузки стрелки
-    const img = new Image();
-    img.src = 'Vector.png';
-    img.onerror = function() {
-        document.documentElement.classList.add('no-arrow-image');
-    };
+    // Проверка загрузки изображений
+    const images = ['Vector.png', 'VectorO.png'];
+    images.forEach(src => {
+        const img = new Image();
+        img.src = src;
+        img.onerror = function() {
+            console.error('Ошибка загрузки изображения:', src);
+        };
+    });
 });

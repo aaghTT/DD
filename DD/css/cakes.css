@@ -86,7 +86,6 @@
 }
 
 .arrow-icon {
-    will-change: transform;
     width: 24px;
     height: 24px;
     display: block;
@@ -94,7 +93,23 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    transition: transform 0.6s ease-out, background-image 0.2s ease;
     margin: 0 auto;
+}
+
+.toggle-button:hover .arrow-icon {
+    background-image: url('VectorO.png');
+}
+
+/* Для перевернутого состояния */
+.toggle-section.expanded .arrow-icon {
+    transform: rotate(180deg);
+    background-image: url('Vector.png');
+}
+
+.toggle-section.expanded .toggle-button:hover .arrow-icon {
+    background-image: url('VectorO.png');
+    transform: rotate(180deg);
 }
 
 /* Стили для скрытых тортов */
@@ -113,10 +128,6 @@
 .hidden-cakes.show {
     max-height: 2000px;
     padding: 20px 0;
-}
-
-.toggle-section.expanded .arrow-icon {
-    transform: rotate(180deg);
 }
 
 /* Адаптивность */
