@@ -62,6 +62,7 @@
 .cake-price {
     font-size: 1.3em;
     font-weight: bold;
+    color: #6b4f44;
     text-align: left; /* Выравнивание по левому краю */
     margin: 2px 0; /* Уменьшил отступы */
 }
@@ -86,6 +87,7 @@
 
 .order-btn:hover {
     background-color: #3a2015;
+    background-color: #6b4f44;
 }
 
 .cake-card:hover {
