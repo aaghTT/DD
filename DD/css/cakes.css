@@ -156,11 +156,12 @@
 
 .hidden-cakes.show {
     max-height: 2000px;
+    gap: 30px;
     padding: 20px 5%;
 }
 
 @media (max-width: 768px) {
-    .cakes, .hidden-cakes {
+    .cakes, .hidden-cakes.show {
         grid-template-columns: 1fr;
         width: 95%;
         padding: 20px 2.5%;
@@ -182,8 +183,8 @@
     }
 
     .order-btn {
-        width: 95%; /* Еще шире на мобильных */
-        padding: 10px 5px; /* Меньше отступы */
-        font-size: 0.9em; /* Чуть меньше размер шрифта */
+        width: 95%;
+        padding: 10px 5px;
+        font-size: 0.9em;
     }
 }
