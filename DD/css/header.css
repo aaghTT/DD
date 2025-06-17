@@ -178,7 +178,12 @@
     transform: translateY(-50%) rotate(-45deg);
     background-color:#f7f4f2;
 }
-
+.nav__title{
+    display: none;
+}
+.nav__contact-item{
+    display: none;
+}
 /* Скрытие header'а при скролле */
 .header.hidden {
     transform: translateY(-100%);
@@ -264,6 +269,7 @@
     }
     
     .nav__contact-item {
+        display: block;
         font-family: 'Playfair Display', serif;
         font-size: 16px;
         color: #F9F3E9;
