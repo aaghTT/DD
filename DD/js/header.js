@@ -47,12 +47,35 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function toggleMenu() {
-        if (window.innerWidth <= 992) { // Только на мобильных
+        if (window.innerWidth <= 992) {
             isMenuOpen = !isMenuOpen;
             burger.classList.toggle('active');
             nav.classList.toggle('active');
             
             if (isMenuOpen) {
+                let existingTitle = nav.querySelector('.nav__title');
+                if (!existingTitle) {
+                    existingTitle = document.createElement('div');
+                    existingTitle.className = 'nav__title';
+                    existingTitle.textContent = 'Меню';
+                    nav.prepend(existingTitle);
+
+                }
+                let existingContacts = nav.querySelector('.nav__contacts');
+                if (!existingContacts) {
+                    let contacts = document.createElement('div');
+                    contacts.className = 'nav__contacts';
+                    contacts.innerHTML = `
+                        <div class="nav__contact-item">ул. Мечтателей, 6</div>
+                        <div class="nav__contact-item">Казань</div>
+                        <div class="nav__contact-item">Телефон: (555) 123-4567</div>
+                    `;
+                    nav.appendChild(contacts); // Добавляем в конец меню
+                }
+                
+
+
+
                 document.body.style.overflow = 'hidden';
                 header.style.transform = 'translateY(0)';
             } else {
@@ -60,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
-
+    burger.addEventListener('click', toggleMenu);
     let isThrottled = false;
     window.addEventListener('scroll', () => {
         if (!isThrottled) {
@@ -70,19 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Обработчик клика по бургеру
-    burger.addEventListener('click', function() {
-        this.classList.toggle('active');
-        nav.classList.toggle('active');
-    
-        if (this.classList.contains('active')) {
-            document.body.style.overflow = 'hidden';
-            header.style.transform = 'translateY(0)';
-        } else {
-            document.body.style.overflow = '';
-        }
-    });
-    
+
     navLinks.forEach(link => {
         link.addEventListener('click', () => isMenuOpen && toggleMenu());
     });

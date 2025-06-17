@@ -5,12 +5,17 @@
     color: #2C1810;
 }
 
-.cakes {
+.cakes-container {
     background-color: #fdf6f0;
+    padding: 20px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.cakes {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(278px, 1fr));
     gap: 30px;
-    padding: 20px 5%;
+    padding: 0 5%;
     width: 90%;
     margin: 0 auto;
     box-sizing: border-box;
@@ -49,22 +54,22 @@
     height: calc(360px - 192px);
     box-sizing: border-box;
     justify-content: space-between;
-    text-align: left; /* Выравнивание по левому краю */
+    text-align: left;
 }
 
 .cake-card h3 {
-    margin: 0 0 2px 0; /* Уменьшил нижний отступ */
+    margin: 0 0 2px 0;
     font-size: 1.5em;
     font-weight: 700;
-    text-align: left; /* Выравнивание по левому краю */
+    text-align: left;
 }
 
 .cake-price {
     font-size: 1.3em;
     font-weight: bold;
     color: #6b4f44;
-    text-align: left; /* Выравнивание по левому краю */
-    margin: 2px 0; /* Уменьшил отступы */
+    text-align: left;
+    margin: 2px 0;
 }
 
 .order-btn {
@@ -79,14 +84,13 @@
     font-weight: 700;
     transition: background-color 0.3s ease;
     width: 90%;
-    margin: 0 auto; /* Изменил отступы */
+    margin: 0 auto;
     display: block;
     text-align: center;
     text-decoration: none;
 }
 
 .order-btn:hover {
-    background-color: #3a2015;
     background-color: #6b4f44;
 }
 
@@ -94,15 +98,12 @@
     transform: translateY(-10px);
 }
 
-/* Toggle section styles remain the same */
 .toggle-section {
     width: 100%;
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0;
     position: relative;
     background-color: #fdf6f0;
-    will-change: transform;
-    transition: transform 0.3s ease;
 }
 
 .toggle-button {
@@ -132,7 +133,6 @@
 
 .toggle-section.expanded .arrow-icon {
     transform: rotate(180deg);
-    background-image: url('Vector.png');
 }
 
 .toggle-section.expanded .toggle-button:hover .arrow-icon {
@@ -141,34 +141,45 @@
 }
 
 .hidden-cakes {
+    display: grid;
     max-height: 0;
     overflow: hidden;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(278px, 1fr));
-    gap: 30px;
     background-color: #fdf6f0;
     padding: 0 5%;
     width: 90%;
     margin: 0 auto;
     box-sizing: border-box;
     transition: max-height 0.8s ease, padding 0.8s ease;
+    gap: 30px;
 }
 
 .hidden-cakes.show {
     max-height: 2000px;
-    gap: 30px;
     padding: 20px 5%;
 }
 
+/* Мобильная версия - 1 колонка */
 @media (max-width: 768px) {
-    .cakes, .hidden-cakes.show {
+    .cakes {
         grid-template-columns: 1fr;
         width: 95%;
         padding: 20px 2.5%;
+        gap: 20px;
     }
     
+    .hidden-cakes {
+        grid-template-columns: 1fr;
+        width: 95%;
+        padding: 0 2.5%;
+        gap: 20px;
+    }
+
+    .hidden-cakes.show {
+        padding: 20px 2.5%;
+    }
+
     .cake-card {
-        height: auto;
+        margin: 0 auto;
         max-width: 100%;
     }
     
@@ -186,5 +197,47 @@
         width: 95%;
         padding: 10px 5px;
         font-size: 0.9em;
+    }
+}
+
+/* Планшетная версия - 2 колонки */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .cakes {
+        grid-template-columns: repeat(2, 1fr);
+        width: 90%;
+        padding: 0 5%;
+        gap: 25px;
+    }
+    
+    .hidden-cakes {
+        grid-template-columns: repeat(2, 1fr);
+        width: 90%;
+        padding: 0 5%;
+        gap: 25px;
+    }
+
+    .hidden-cakes.show {
+        padding: 20px 5%;
+    }
+}
+
+/* Десктопная версия - 4 колонки */
+@media (min-width: 1025px) {
+    .cakes {
+        grid-template-columns: repeat(4, 1fr);
+        width: 90%;
+        padding: 0 5%;
+        gap: 30px;
+    }
+    
+    .hidden-cakes {
+        grid-template-columns: repeat(4, 1fr);
+        width: 90%;
+        padding: 0 5%;
+        gap: 30px;
+    }
+
+    .hidden-cakes.show {
+        padding: 20px 5%;
     }
 }
