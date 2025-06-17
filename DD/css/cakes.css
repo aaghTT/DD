@@ -141,21 +141,24 @@
 }
 
 .hidden-cakes {
-    display: none;
+    display: grid;
+    max-height: 0;
+    overflow: hidden;
     background-color: #fdf6f0;
     padding: 0 5%;
     width: 90%;
     margin: 0 auto;
     box-sizing: border-box;
+    transition: max-height 0.8s ease, padding 0.8s ease;
     gap: 30px;
 }
 
 .hidden-cakes.show {
-    display: grid;
+    max-height: 2000px;
     padding: 20px 5%;
 }
 
-/* Мобильная версия - 1 колонка (до 768px) */
+/* Мобильная версия - 1 колонка */
 @media (max-width: 768px) {
     .cakes {
         grid-template-columns: 1fr;
@@ -176,7 +179,7 @@
     }
 
     .cake-card {
-        width: 100%;
+        margin: 0 auto;
         max-width: 100%;
     }
     
@@ -197,7 +200,7 @@
     }
 }
 
-/* Планшетная версия - 2 колонки (769px-1024px) */
+/* Планшетная версия - 2 колонки */
 @media (min-width: 769px) and (max-width: 1024px) {
     .cakes {
         grid-template-columns: repeat(2, 1fr);
@@ -218,7 +221,7 @@
     }
 }
 
-/* Десктопная версия - 4 колонки (1025px и выше) */
+/* Десктопная версия - 4 колонки */
 @media (min-width: 1025px) {
     .cakes {
         grid-template-columns: repeat(4, 1fr);
