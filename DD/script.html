@@ -93,6 +93,7 @@
     <div class="container">
         <h1 class="cakes_h1">Торты</h1>
         <div class="cakes" id="cakes">
+            <!-- Первые 4 видимые карточки -->
             <div class="cake-card">
                 <div class="cake-image-container">
                     <img src="pages/t4.png" alt="Ягодный чизкейк">
@@ -100,7 +101,7 @@
                 <div class="cake-content">
                     <h4>Ягодный чизкейк</h4>
                     <h5><div class="cake-price">1700 руб/кг</div></h5>
-                    <button class="order-btn" onclick="scrollToOrder()">Оформить заказ </button>
+                    <button class="order-btn" onclick="scrollToOrder()">Оформить заказ</button>
                 </div>
             </div>
             
@@ -138,12 +139,14 @@
             </div>
         </div>
 
+        <!-- Кнопка переключения -->
         <div class="toggle-section">
             <button class="toggle-button" aria-expanded="false">
                 <span class="arrow-icon" role="img" aria-label="Показать/скрыть"></span>
             </button>
         </div>
 
+        <!-- Скрытые карточки (изначально скрыты) -->
         <div class="hidden-cakes">
             <div class="cake-card">
                 <div class="cake-image-container">
