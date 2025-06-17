@@ -78,6 +78,8 @@
     padding: 0;
     align-items: center;
     gap: 30px;
+
+    border-top: 1px solid rgba(249, 243, 233, 0.2);
 }
 
 .nav__item {
@@ -176,7 +178,12 @@
     transform: translateY(-50%) rotate(-45deg);
     background-color:#f7f4f2;
 }
-
+.nav__title{
+    display: none;
+}
+.nav__contact-item{
+    display: none;
+}
 /* Скрытие header'а при скролле */
 .header.hidden {
     transform: translateY(-100%);
@@ -195,7 +202,20 @@
     .burger {
         display: block;
     }
+    .nav__title{
+        display: block;
+        position: absolute;
+        top: 20px; 
+        left: 40px;
+        font-family: 'Playfair Display', serif;
+        font-size: 20px;
+        color: #F9F3E9;
+        font-weight: 700;
+        margin: 0; 
+        padding: 0; 
+        width: calc(100% - 80px);
     
+    }
     .header__nav {
         position: fixed;
         top: 0;
@@ -206,27 +226,55 @@
         background-color: #2C1810;
         flex-direction: column;
         justify-content:flex-start;
+        justify-content: space-between;
         align-items: start;
         transition: right 0.3s ease-in-out;
         z-index: 1000;
-        padding-top: 80px;
+        padding: 60px 0 0;
+        box-sizing: border-box;
+        display: flex;
     }
     
     .header__nav.active {
         right: 0;
     }
     
-    .nav__list {
+    .nav__list { 
         flex-direction: column;
         width: 100%;
         padding: 0;
         gap:5px;
+        padding-bottom: 20px;
+        box-sizing: border-box;
+        border-top: 1px solid rgba(249, 243, 233, 0.2);
     }
     
     .nav__item {
         width: 100%;
         text-align:center;
         height: 60px;
+    }
+    .nav__contacts {
+        width: 100%;
+        height: 153px; 
+        padding: 20px 40px;
+        box-sizing: border-box;
+        background-color: #2C1810;
+        border-top: 1px solid rgba(249, 243, 233, 0.2);
+        position: sticky;
+        bottom: 0;
+        left: 0;
+        gap:5px;
+        padding-bottom: 20px;
+    }
+    
+    .nav__contact-item {
+        display: block;
+        font-family: 'Playfair Display', serif;
+        font-size: 16px;
+        color: #F9F3E9;
+        height: 40px;
+        line-height: 24px;
     }
     
     .nav__link {
