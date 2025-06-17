@@ -16,7 +16,7 @@
     display: grid;
     gap: 30px;
     padding: 0 5%;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
 }
@@ -83,7 +83,7 @@
     font-size: 1em;
     font-weight: 700;
     transition: background-color 0.3s ease;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     display: block;
     text-align: center;
@@ -141,12 +141,15 @@
 }
 
 .hidden-cakes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     display: grid;
     max-height: 0;
     overflow: hidden;
     background-color: #fdf6f0;
     padding: 0 5%;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
     transition: max-height 0.8s ease, padding 0.8s ease;
@@ -162,14 +165,17 @@
 @media (max-width: 768px) {
     .cakes {
         grid-template-columns: 1fr;
-        width: 95%;
+        width: 100%;
         padding: 20px 2.5%;
         gap: 20px;
     }
     
     .hidden-cakes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         grid-template-columns: 1fr;
-        width: 95%;
+        width: 100%;
         padding: 0 2.5%;
         gap: 20px;
     }
@@ -194,7 +200,7 @@
     }
 
     .order-btn {
-        width: 95%;
+        width: 100%;
         padding: 10px 5px;
         font-size: 0.9em;
     }
@@ -207,9 +213,13 @@
         width: 90%;
         padding: 0 5%;
         gap: 25px;
+
     }
     
     .hidden-cakes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         grid-template-columns: repeat(2, 1fr);
         width: 90%;
         padding: 0 5%;
@@ -225,14 +235,17 @@
 @media (min-width: 1025px) {
     .cakes {
         grid-template-columns: repeat(4, 1fr);
-        width: 90%;
+        width: 100%;
         padding: 0 5%;
         gap: 30px;
     }
     
     .hidden-cakes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         grid-template-columns: repeat(4, 1fr);
-        width: 90%;
+        width: 100%;
         padding: 0 5%;
         gap: 30px;
     }
