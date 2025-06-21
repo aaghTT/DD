@@ -34,14 +34,13 @@
 }
 
 .cake-image-container {
-    height: 200px;
+    height: 192px;
     width: 100%;
     position: relative;
     perspective: 1000px;
     margin: 0;
     padding: 0;
-    border: 20px solid white;
-    box-sizing: border-box;
+    border: none;
 }
 
 .cake-image-wrapper {
@@ -112,7 +111,7 @@
     padding: 7px; 
     display: flex;
     flex-direction: column;
-    height: calc(360px - 200px);
+    height: calc(360px - 192px);
     box-sizing: border-box;
     justify-content: flex-start;
     text-align: left;
