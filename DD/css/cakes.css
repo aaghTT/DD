@@ -79,7 +79,7 @@
 }
 
 .cake-image-back p {
-    font-size: 15px;
+    font-size: 16px;
     padding:10px 5px 50px;
     color: #000000;
     text-align: center;
@@ -108,7 +108,7 @@
     border: none;
 }
 .cake-content {
-    padding: 7px; 
+    padding: 5px; 
     display: flex;
     flex-direction: column;
     height: calc(360px - 192px);
@@ -117,9 +117,12 @@
     text-align: left;
 }
 
-.cake-content h4, .cake-content h5 {
-    margin: 0;
-    padding: 0;
+.cake-content h4 {
+    margin: 10px 20px;
+    color:#2C1810;
+    font-size:20px;
+    font-weight: 700;
+
 }
 
 .cake-card h3 {
@@ -130,11 +133,11 @@
 }
 
 .cake-price {
-    font-size: 1.3em;
-    font-weight: bold;
+    font-size: 16px;
     color: #6b4f44;
     text-align: left;
-    margin: 2px 0;
+    margin: 10px 20px;
+    font-weight: 400;
 }
 
 .order-btn {
@@ -142,18 +145,19 @@
     color: #fdf6f0;
     font-family: 'Playfair Display', serif;
     border: none;
-    padding: 10px 15px;
     border-radius: 25px;
     cursor: pointer;
     font-size: 1em;
     font-weight: 700;
     transition: background-color 0.3s ease;
-    width: 100%;
-    margin: 0 auto;
+    width: 87%;
+    margin: 20px auto;
     margin-top: auto;
     display: block;
     text-align: center;
     text-decoration: none;
+    font-size: 16px;
+    height: 40px;
 }
 
 .order-btn:hover {
@@ -252,21 +256,30 @@
     .hidden-cakes.show {
         padding: 20px 2.5%;
     }
-
+   
     .cake-card {
         width: 100%;
         height: auto;
         margin: 0 auto;
     }
-    
+    .order-btn{
+        height: 48px;
+        margin: 10px auto;
+        width:100%;
+    }
     .cake-image-container {
         height: auto;
         aspect-ratio: 4/3;
     }
-    
     .cake-content {
         height: auto;
-        padding: 15px;
+        padding: 10px;
+    }
+    .cake-image-back p{
+        font-size: 150%;
+    }
+    .cake-calories{
+        font-size: 150%;
     }
 }
 
@@ -290,9 +303,18 @@
     .hidden-cakes.show {
         padding: 20px 2.5% 40px;
     }
-
+    .order-btn{
+        height: 59px;
+        margin: 10px auto;
+    }
     .cake-card {
         width: 100%;
+    }
+    .cake-image-back p{
+        font-size: 115%;
+    }
+    .cake-calories{
+        font-size: 115%;
     }
 }
 
