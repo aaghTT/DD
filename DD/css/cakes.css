@@ -215,11 +215,13 @@
     box-sizing: border-box;
     transition: max-height 0.8s ease, padding 0.8s ease;
     gap: 30px;
+    
 }
 
 .hidden-cakes.show {
-    max-height: 2000px;
-    padding: 20px 5%;
+    max-height: none;
+    overflow: visible;
+    padding: 20px 5% 40px;
 }
 
 /* Мобильная версия - 1 колонка */
@@ -227,7 +229,7 @@
     .cakes {
         grid-template-columns: 1fr;
         width: 100%;
-        padding: 20px 2.5%;
+        padding: 20px 2.5% 40px;
         gap: 20px;
     }
     
@@ -246,24 +248,19 @@
     }
 
     .cake-card {
+        width: 100%;
+        height: auto;
         margin: 0 auto;
-        max-width: 100%;
     }
     
     .cake-image-container {
         height: auto;
-        aspect-ratio: 278/192;
+        aspect-ratio: 4/3;
     }
     
     .cake-content {
         height: auto;
         padding: 15px;
-    }
-
-    .order-btn {
-        width: 100%;
-        padding: 10px 5px;
-        font-size: 0.9em;
     }
 }
 
@@ -271,23 +268,25 @@
 @media (min-width: 769px) and (max-width: 1024px) {
     .cakes {
         grid-template-columns: repeat(2, 1fr);
-        width: 90%;
-        padding: 0 5%;
+        width: 100%;
+        padding: 0 2.5%;
         gap: 25px;
     }
     
     .hidden-cakes {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
-        width: 90%;
-        padding: 0 5%;
+        width: 100%;
+        padding: 0 2.5%;
         gap: 25px;
     }
 
     .hidden-cakes.show {
-        padding: 20px 5%;
+        padding: 20px 2.5% 40px;
+    }
+
+    .cake-card {
+        width: 100%;
     }
 }
 
@@ -301,9 +300,7 @@
     }
     
     .hidden-cakes {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        display: grid;
         grid-template-columns: repeat(4, 1fr);
         width: 100%;
         padding: 0 5%;
@@ -311,6 +308,10 @@
     }
 
     .hidden-cakes.show {
-        padding: 20px 5%;
+        padding: 20px 5% 40px;
+    }
+
+    .cake-card {
+        width: 100%;
     }
 }
