@@ -34,13 +34,14 @@
 }
 
 .cake-image-container {
-    height: 192px;
+    height: 200px;
     width: 100%;
     position: relative;
     perspective: 1000px;
     margin: 0;
     padding: 0;
-    border: none;
+    border: 20px solid white;
+    box-sizing: border-box;
 }
 
 .cake-image-wrapper {
@@ -111,10 +112,15 @@
     padding: 7px; 
     display: flex;
     flex-direction: column;
-    height: calc(360px - 192px);
+    height: calc(360px - 200px);
     box-sizing: border-box;
-    justify-content: space-between;
+    justify-content: flex-start;
     text-align: left;
+}
+
+.cake-content h4, .cake-content h5 {
+    margin: 0;
+    padding: 0;
 }
 
 .cake-card h3 {
@@ -145,6 +151,7 @@
     transition: background-color 0.3s ease;
     width: 100%;
     margin: 0 auto;
+    margin-top: auto;
     display: block;
     text-align: center;
     text-decoration: none;
