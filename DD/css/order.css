@@ -16,9 +16,9 @@
 
 .order-header h1 {
     color: #333;
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 10px;
+    font-size: 36px;
+    font-weight: 700;
+    padding: 25px 0 20px;
 }
 
 .form-section {
@@ -47,17 +47,17 @@
     width: 100%;
     padding: 12px 15px;
     border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
+    font-size: 16px;
     transition: border-color 0.3s;
+    height: 48px;
 }
 
 select.form-control option {
     background-color: white; 
     color: #333; 
     font-family: 'Playfair Display', serif;
-
 }
+
 select.form-control option:hover {
     background-color: #e8d5c8 !important; 
 }
@@ -73,12 +73,12 @@ select.form-control option:hover {
     color: white;
     border: none;
     padding: 14px;
-    font-size: 16px;
+    font-size: 24px;
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s;
     font-family: 'Playfair Display', serif;
-    font-weight: 500;
+    font-weight: 700;
     width: 100%;
     display: block;
     -webkit-border-radius: 25px;
