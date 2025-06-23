@@ -1,0 +1,319 @@
+/* Основные стили header'а */
+.header {
+    background-color: #FDF6F0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    padding: 20px 0 25px; /* Отступы сверху и снизу */
+}
+
+.header__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Только боковые отступы для контента */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+/* Полоска на всю ширину экрана */
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #E8D5C8;
+}
+
+/* Мобильная версия (только для телефонов) - с отступами */
+@media (max-width: 576px) {
+    .header {
+        padding: 15px 0 20px;
+    }
+    
+    .header::after {
+        left: 15px;
+        right: 15px;
+        bottom: 10px;
+    }
+    
+    .header__container {
+        padding: 0 15px;
+    }
+}
+
+/* Логотип и навигация в одной линии */
+.header__content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+}
+
+.logo {
+    font-family: 'Satisfy', cursive;
+    font-size: 40px;
+    color: #2C1810;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+/* Навигация */
+.header__nav {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+.nav__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    gap: 30px;
+
+    border-top: 1px solid rgba(249, 243, 233, 0.2);
+}
+
+.nav__item {
+    position: relative;
+}
+
+.nav__link {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #2C1810;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.nav__link:hover {
+    color: #D4A76A;
+}
+
+.nav__button {
+    background-color: #2c1810;
+    color: #f7f4f2;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+}
+
+.nav__button:hover {
+    background-color: #6b4f44;
+    transform: translateY(-2px);
+}
+
+/* Бургер-меню */
+.burger {
+    display: none;
+    width: 30px;
+    height: 24px;
+    position: relative;
+    z-index: 1001;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.burger span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #2C1810;
+    border-radius: 2px;
+    left: 0;
+    transform-origin: center;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Три полоски бургера */
+.burger span:nth-child(1) {
+    top: 0;
+}
+
+.burger span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.burger span:nth-child(3) {
+    bottom: 0;
+}
+
+/* Анимация в крестик */
+.burger.active span:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    background-color:#f7f4f2;
+}
+
+.burger.active span:nth-child(2) {
+    opacity: 0;
+    background-color:#f7f4f2;
+}
+
+.burger.active span:nth-child(3) {
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+    background-color:#f7f4f2;
+}
+.nav__title{
+    display: none;
+}
+.nav__contact-item{
+    display: none;
+}
+/* Скрытие header'а при скролле */
+.header.hidden {
+    transform: translateY(-100%);
+}
+
+/* Адаптивные стили */
+@media (max-width: 992px) {
+    .header__content {
+        justify-content: space-between;
+    }
+    
+    .logo {
+        font-size: 32px;
+    }
+    
+    .burger {
+        display: block;
+    }
+    .nav__title{
+        display: block;
+        position: absolute;
+        top: 20px; 
+        left: 40px;
+        font-family: 'Playfair Display', serif;
+        font-size: 20px;
+        color: #F9F3E9;
+        font-weight: 700;
+        margin: 0; 
+        padding: 0; 
+        width: calc(100% - 80px);
+    
+    }
+    .header__nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 400px;
+        height:200vh;
+        background-color: #2C1810;
+        flex-direction: column;
+        justify-content:flex-start;
+        justify-content: space-between;
+        align-items: start;
+        transition: right 0.3s ease-in-out;
+        z-index: 1000;
+        padding: 60px 0 0;
+        box-sizing: border-box;
+        display: flex;
+    }
+    
+    .header__nav.active {
+        right: 0;
+    }
+    
+    .nav__list { 
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        gap:5px;
+        padding-bottom: 20px;
+        box-sizing: border-box;
+        border-top: 1px solid rgba(249, 243, 233, 0.2);
+    }
+    
+    .nav__item {
+        width: 100%;
+        text-align:center;
+        height: 60px;
+    }
+    .nav__contacts {
+        width: 100%;
+        height: 153px; 
+        padding: 20px 40px;
+        box-sizing: border-box;
+        background-color: #2C1810;
+        border-top: 1px solid rgba(249, 243, 233, 0.2);
+        position: sticky;
+        bottom: 0;
+        left: 0;
+        gap:5px;
+        padding-bottom: 20px;
+    }
+    
+    .nav__contact-item {
+        display: block;
+        font-family: 'Playfair Display', serif;
+        font-size: 16px;
+        color: #F9F3E9;
+        height: 40px;
+        line-height: 24px;
+    }
+    
+    .nav__link {
+        display: block;
+        padding: 0 20px;
+        font-size: 18px;
+        color: #F9F3E9;
+        position: absolute;
+        top: 25%;
+        left: 20px;
+        bottom:50%;
+    }
+    .nav__item:hover{
+        background-color: #6b4f44;
+    }
+
+    .nav__button {
+        width: 100%;
+        height: 60px;
+        padding: 0 20px;
+        font-size: 18px;
+        border-radius: 1px;
+        -webkit-border-radius: 1px;
+        -moz-border-radius: 1px;
+        -ms-border-radius: 1px;
+        -o-border-radius: 1px; 
+        display: flex;
+        justify-content: start; 
+        align-items: center; 
+        padding-left: 40px;  
+    }
+}
+
+@media (max-width: 576px) {
+    .logo {
+        font-size: 28px;
+    }
+    
+    .header__nav {
+        width: 85%;
+    }
+}

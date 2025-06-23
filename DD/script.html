@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chocolate Paradise</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="css/cakes.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/loc.css">
+    <link rel="stylesheet" href="css/order.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+    <div class="header__container">
+        <div class="header__content">
+            <a href="/" class="logo">Chocolate Paradise</a>
+            <nav class="header__nav" id="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><button class="nav__button" onclick="scrollToOrder()">Оформить заказ</button></li>
+                    <li class="nav__item"><a href="#home" class="nav__link">Главная</a></li>
+                    <li class="nav__item"><a href="#cakes" class="nav__link">Торты</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">О нас</a></li>
+                    <li class="nav__item"><a href="#address" class="nav__link">Адрес</a></li>
+                    <li class="nav__item"><a href="#contacts" class="nav__link">Контакты</a></li>
+                </ul>
+            </nav>
+            
+            <div class="burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    </header>
+    
+    <div class="slider" id="home">
+        <input type="radio" name="slider" id="slide1" checked>
+        <input type="radio" name="slider" id="slide2">
+        <input type="radio" name="slider" id="slide3">
+        
+        <div class="slides-container">
+            <div class="slide">
+                <div class="slide-image-container">
+                    <img src="pages/t1.png" alt="Торт 1">
+                </div>
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h2 class="slide-title">Наполеон</h2>
+                    <p class="slide-description">Воздушные слои теста с бархатистым кремом, тающие во рту</p>
+                </div>        
+            </div>
+            
+            <div class="slide">
+                <div class="slide-image-container">
+                    <img src="pages/t2.png" alt="Торт 2">
+                </div>
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h2 class="slide-title">Красный бархат</h2>
+                    <p class="slide-description">Сочный бисквит с нежным сливочным сыром и шелковистым кремом</p>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <div class="slide-image-container">
+                    <img src="pages/t3.png" alt="Торт 3">
+                </div>
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h2 class="slide-title">Морковный торт</h2>
+                    <p class="slide-description">Нежная морковная основа с ароматными специями и крем-чизом</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <label for="slide1"></label>
+            <label for="slide2"></label>
+            <label for="slide3"></label>
+        </div>
+    </div>
+       
+    <div class="container">
+        <h1 class="cakes_h1">Торты</h1>
+        <div class="cakes" id="cakes">
+            <!-- Первые 4 видимые карточки -->
+            <div class="cake-card">
+                <div class="cake-image-container">
+                    <div class="cake-image-wrapper">
+                        <div class="cake-image-front">
+                            <img src="pages/t4.png" alt="Ягодный чизкейк">
+                        </div>
+                        <div class="cake-image-back">
+                            <p>Нежная творожная основа на песочном корже, с прослойкой свежих ягод и желе</p>
+                            <div class="cake-calories">250ккал/100гр</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cake-content">
+                    <h4>Ягодный чизкейк</h4>
+                    <h5><div class="cake-price">1700 руб/кг</div></h5>
+                    <button class="order-btn" onclick="scrollToOrder()">Оформить заказ</button>
+                </div>
+            </div>
+            
+            <div class="cake-card">
+                <div class="cake-image-container">
+                    <div class="cake-image-wrapper">
+                        <div class="cake-image-front">
+                            <img src="pages/t5.png" alt="Шварцвальд">
+                        </div>
+                        <div class="cake-image-back">
+                            <p>Шоколадный бисквит, пропитанный вишнёвым сиропом, с прослойками взбитых сливок и вишен</p>
+                            <div class="cake-calories">350ккал/100гр</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cake-content">
+                    <h4>Шварцвальд</h4>
+                    <h5><div class="cake-price">1800 руб/кг</div></h5>
+                    <button class="order-btn" onclick="scrollToOrder()">Оформить заказ</button>
+                </div>
+            </div>
+            
+            <div class="cake-card">
+                <div class="cake-image-container">
+                    <div class="cake-image-wrapper">
+                        <div class="cake-image-front">
+                            <img src="pages/t6.png" alt="Тирамису">
+                        </div>
+                        <div class="cake-image-back">
+                            <p>Кофейный бисквит, пропитанный кофейным сиропом, с прослойками маскарпоне и какао-порошком</p>
+                            <div class="cake-calories">300ккал/100гр</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cake-content">
+                    <h4>Тирамису</h4>
+                    <h5><div class="cake-price">1900 руб/кг</div></h5>
+                    <button class="order-btn" onclick="scrollToOrder()">Оформить заказ</button>
+                </div>
+            </div>
+            
+            <div class="cake-card">
+                <div class="cake-image-container">
+                    <div class="cake-image-wrapper">
+                        <div class="cake-image-front">
+                            <img src="pages/t7.png" alt="Японский чизкейк">
+                        </div>
+                        <div class="cake-image-back">
+                            <p>Воздушный и лёгкий чизкейк с нежной текстурой, напоминающей хлопок, с лёгким ванильным ароматом</p>
+                            <div class="cake-calories">200ккал/100гр</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cake-content">
+                    <h4>Японский чизкейк</h4>
+                    <h5><div class="cake-price">2000 руб/кг</div></h5>
+                    <button class="order-btn" onclick="scrollToOrder()">Оформить заказ</button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Кнопка переключения -->
+        <div class="toggle-section">
+            <button class="toggle-button" aria-expanded="false">
+                <span class="arrow-icon" role="img" aria-label="Показать/скрыть"></span>
+            </button>
+        </div>
+    
+        <!-- Скрытые карточки (изначально скрыты) -->
+        <div class="hidden-cakes">
+            <div class="cake-card">
+                <div class="cake-image-container">
+                    <div class="cake-image-wrapper">
+                        <div class="cake-image-front">
+                            <img src="pages/napoleon.png" alt="Наполеон">
+                        </div>
+                        <div class="cake-image-back">
+                            <p>Это изысканный десерт, состоящий из слоёв воздушного теста, нежного заварного крема, сливочного масла и сахарной пудры</p>
+                            <div class="cake-calories">350ккал/100гр</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cake-content">
+                    <h4>Наполеон</h4>
+                    <h5><div class="cake-price">1300 руб/кг</div></h5>
+                    <button class="order-btn" onclick="scrollToOrder()">Оформить заказ</button>
+                </div>
+            </div>
+            
+            <div class="cake-card">
+                <div class="cake-image-container">
+                    <div class="cake-image-wrapper">
+                        <div class="cake-image-front">
+                            <img src="pages/red_barhat.png" alt="Красный бархат">
+                        </div>
+                        <div class="cake-image-back">
+                            <p>Сочный бисквит с какао, нежный сливочный сыр и шелковистый крем, украшенный бархатистой глазурью</p>
+                            <div class="cake-calories">350ккал/100гр</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cake-content">
+                    <h4>Красный бархат</h4>
+                    <h5><div class="cake-price">1500 руб/кг</div></h5>
+                    <button class="order-btn" onclick="scrollToOrder()">Оформить заказ</button>
+                </div>
+            </div>
+            
+            <div class="cake-card">
+                <div class="cake-image-container">
+                    <div class="cake-image-wrapper">
+                        <div class="cake-image-front">
+                            <img src="pages/carrot_cake.png" alt="Морковный торт">
+                        </div>
+                        <div class="cake-image-back">
+                            <p>Нежная морковная основа с ароматными специями, покрытая крем-чизом и украшенная ореховой крошкой</p>
+                            <div class="cake-calories">300ккал/100гр</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cake-content">
+                    <h4>Морковный торт</h4>
+                    <h5><div class="cake-price">1400 руб/кг</div></h5>
+                    <button class="order-btn" onclick="scrollToOrder()">Оформить заказ</button>
+                </div>
+            </div>
+            
+            <div class="cake-card">
+                <div class="cake-image-container">
+                    <div class="cake-image-wrapper">
+                        <div class="cake-image-front">
+                            <img src="pages/praga.png" alt="Прага">
+                        </div>
+                        <div class="cake-image-back">
+                            <p>Воздушный бисквит, пропитанный кофейным сиропом, с прослойками шоколадного крема и покрытый глянцевой шоколадной глазурью</p>
+                            <div class="cake-calories">400ккал/100гр</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cake-content">
+                    <h4>Прага</h4>
+                    <h5><div class="cake-price">1600 руб/кг</div></h5>
+                    <button class="order-btn" onclick="scrollToOrder()">Оформить заказ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="about" id="about">
+        <div class="about-content">
+            <h2 class="about-title">Наша история</h2>
+            <p class="about-description">В сердце города расположилась кондитерская "Chocolate Paradise", где каждый десерт — это маленькое произведение искусства. Наши мастер-кондитеры создают неповторимые лакомства, вдохновленные путешествиями. Здесь каждый посетитель окунается в атмосферу сладких грез.</p>
+            
+            <div class="about-features">
+                <div class="feature">
+                    <h3 class="feature-title">Ручная работа</h3>
+                    <p class="feature-text">Каждый кусочек изготовлен с особой тщательностью.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3 class="feature-title">Свежесть</h3>
+                    <p class="feature-text">Мы используем только самые свежие ингредиенты.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3 class="feature-title">Индивидуальный подход</h3>
+                    <p class="feature-text">Создаем эксклюзивные десерты для ваших особенных моментов.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="order" id="order">
+        <div class="order-header">
+            <h1>Оформить заказ</h1>
+        </div>
+        <form id="orderForm">
+            <div class="order-container">
+                <div class="form-section">
+                    <div class="form-group">
+                        <label for="fullname">Полное имя</label>
+                        <input type="text" id="fullname" class="form-control" placeholder="Введите ваше полное имя">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Номер телефона</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="Введите ваш номер телефона">
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <div class="form-group">
+                        <label for="date">Выберите дату на которую нужен торт</label>
+                        <input type="date" id="date" class="form-control">
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <div class="form-group">
+                        <label for="cake">Торт</label>
+                        <select id="cake" class="form-control" required>
+                            <option value="" disabled selected>Выберите торт</option>
+                            <option value="Наполеон">Наполеон</option>
+                            <option value="Красный бархат">Красный бархат</option>
+                            <option value="Морковный торт">Морковный торт</option>
+                            <option value="Прага">Прага</option>
+                            <option value="Ягодный чизкейк">Ягодный чизкейк</option>
+                            <option value="Шварцвальд">Шварцвальд</option>
+                            <option value="Тирамису">Тирамису</option>
+                            <option value="Японский чизкейк">Японский чизкейк</option>
+                        </select>
+                    </div>
+                    </div> 
+                <div class="submit-group">
+                    <button type="submit" class="submit-btn">Отправить</button>
+                </div>
+                </div>
+        </form>
+    </div>
+
+    <div class="location-section" id="address">
+        <div class="location-container">
+            <h2 class="location-title">Приходи к нам</h2>
+            
+            <div class="location-content">
+                <div class="location-info">
+                    <h3 class="info-title">Местоположение</h3>
+                    <p class="info-text">г. Казань</p>
+                    <p class="info-text">ул. Мечтателей, д. 6</p>
+                    
+                    <h3 class="info-title">Часы работы</h3>
+                    <p class="info-text">Понедельник - пятница: 8:00 - 20:00</p>
+                    <p class="info-text">Суббота: 9:00 - 18:00</p>
+                    <p class="info-text">Воскресенье: 10:00 - 16:00</p>
+                </div>
+                
+                <div class="location-map">
+                    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A7965b36df65fee99f7033cb623106b87974311fb0a2f43b003d82db05ae8d5e3&amp;source=constructor" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer" id="contacts">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-contacts">
+                    <h3 class="footer-title">Контакты</h3>
+                    <p class="footer-text">Телефон: (555) 123-4567</p>
+                    <p class="footer-text">Почта: chocolateparadise.com</p>
+                </div>
+                
+                <div class="footer-social">
+                    <h3 class="footer-title">Социальные сети</h3>
+                    <div class="social-icons">
+                        <a href="https://i.pinimg.com/736x/67/37/6d/67376d9c590a782ea6151456d8ad4c90.jpg" class="social-link vk-link"></a>
+                        <a href="https://i.pinimg.com/736x/14/9d/de/149dded3f109ba10a907e7ee12db9b09.jpg" class="social-link tg-link"></a>
+                        <a href="https://idsb.tmgrup.com.tr/ly/uploads/images/2021/11/11/158755.jpg" class="social-link insta-link"></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-copyright">
+                <p>© 2025 Chocolate Paradise. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/order_form.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/cakes.js"></script>
+    <script src="js/header.js"></script>
+</body>
+</html>

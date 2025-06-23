@@ -1,0 +1,163 @@
+/* Общие стили для всех устройств */
+.location-section {
+    padding: 60px 20px 40px;
+    color: #2C1810;
+    background-color: #fdf6f0;
+    position: relative;
+    margin-top: 40px;
+}
+
+.location-section::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 0;  /* Начинается от самого края */
+    right: 0; /* Заканчивается у края */
+    width: 100%; /* На всю ширину */
+    height: 2px;
+    background-color: #2C1810;
+    /* Убираем transform и max-width */
+}
+
+.location-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.location-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.location-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.location-info {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.info-title {
+    font-size: 2.0rem;
+    font-weight: 600;
+    margin: 15px 0 8px;
+    text-align: left;
+}
+
+.info-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 5px 0;
+    text-align: left;
+}
+
+.location-map iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Для мобильных */
+@media (max-width: 767px) {
+    .location-section {
+        padding-top: 50px;
+        margin-top: 30px;
+    }
+    
+    .location-section::before {
+        top: 20px;
+        /* Убираем изменение ширины для мобильных */
+    }
+}
+
+/* Планшеты (768px и выше) */
+@media (min-width: 768px) {
+    .location-section {
+        padding: 50px 25px;
+    }
+    
+    .location-title {
+        font-size: 2.2rem;
+        margin-bottom: 35px;
+    }
+    
+    .location-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 30px;
+    }
+    
+    .location-info {
+        flex: 0 0 45%;
+        margin-bottom: 0;
+    }
+    
+    .info-title {
+        font-size: 1.4rem;
+    }
+    
+    .info-text {
+        font-size: 1.15rem;
+    }
+    
+    .location-map {
+        flex: 0 0 50%;
+    }
+    
+    .location-map iframe {
+        height: 350px;
+    }
+}
+
+/* Десктопы (992px и выше) - ФИКСИРОВАННЫЕ РАЗМЕРЫ КАРТЫ */
+@media (min-width: 992px) {
+    .location-section {
+        padding: 60px 30px;
+    }
+    
+    .location-title {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+    }
+    
+    .info-title {
+        font-size: 1.5rem;
+        margin: 20px 0 10px;
+    }
+    
+    .info-text {
+        font-size: 1.2rem;
+    }
+    
+    .location-map {
+        flex: 0 0 600px; /* Фиксированная ширина */
+    }
+    
+    .location-map iframe {
+        width: 600px; /* Точный размер */
+        height: 400px; /* Точный размер */
+    }
+}
+
+/* Большие экраны (1200px и выше) */
+@media (min-width: 1200px) {
+    .location-container {
+        padding: 0;
+    }
+    
+    .location-content {
+        justify-content: center;
+        gap: 60px;
+    }
+    
+    .location-info {
+        flex: 0 0 400px;
+    }
+}

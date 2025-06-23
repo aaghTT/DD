@@ -1,0 +1,345 @@
+.cakes_h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Playfair Display', serif;
+    color: #2C1810;
+}
+
+
+.cakes {
+    display: grid;
+    gap: 30px;
+    padding: 0 5%;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.cake-card {
+    color: #2C1810;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    width: 278px;
+    height: 360px;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    font-family: 'Playfair Display', serif;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.cake-image-container {
+    height: 192px;
+    width: 100%;
+    position: relative;
+    perspective: 1000px;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.cake-image-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.cake-card:hover .cake-image-wrapper {
+    transform: rotateY(180deg);
+}
+
+.cake-image-front, .cake-image-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    overflow: hidden;
+}
+
+.cake-image-back {
+    background-color: #E8D5C8;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.cake-image-back p {
+    font-size: 16px;
+    padding:10px 5px 50px;
+    color: #000000;
+    text-align: center;
+
+}
+
+.cake-calories {
+    font-size: 15px;
+    color: #000000;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.cake-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+.cake-content {
+    padding: 5px; 
+    display: flex;
+    flex-direction: column;
+    height: calc(360px - 192px);
+    box-sizing: border-box;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.cake-content h4 {
+    margin: 10px 20px;
+    color:#2C1810;
+    font-size:20px;
+    font-weight: 700;
+
+}
+
+.cake-card h3 {
+    margin: 0 0 2px 0;
+    font-size: 1.5em;
+    font-weight: 700;
+    text-align: left;
+}
+
+.cake-price {
+    font-size: 16px;
+    color: #6b4f44;
+    text-align: left;
+    margin: 10px 20px;
+    font-weight: 400;
+}
+
+.order-btn {
+    background-color: #2C1810;
+    color: #fdf6f0;
+    font-family: 'Playfair Display', serif;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    width: 87%;
+    margin: 20px auto;
+    margin-top: auto;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    height: 40px;
+}
+
+.order-btn:hover {
+    background-color: #6b4f44;
+}
+
+.cake-card:hover {
+    transform: translateY(-10px);
+}
+
+
+.toggle-section {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    background-color: #fdf6f0;
+}
+
+.toggle-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    margin: 0 auto;
+    display: block;
+}
+
+.arrow-icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+    background-image: url('Vector.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition: transform 0.6s ease-out, background-image 0.2s ease;
+    margin: 0 auto;
+}
+
+.toggle-button:hover .arrow-icon {
+    background-image: url('VectorO.png');
+}
+
+.toggle-section.expanded .arrow-icon {
+    transform: rotate(180deg);
+}
+
+.toggle-section.expanded .toggle-button:hover .arrow-icon {
+    background-image: url('VectorO.png');
+    transform: rotate(180deg);
+}
+
+.hidden-cakes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    display: grid;
+    max-height: 0;
+    overflow: hidden;
+    background-color: #fdf6f0;
+    padding: 0 5%;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    transition: max-height 0.8s ease, padding 0.8s ease;
+    gap: 30px;
+    
+}
+
+.hidden-cakes.show {
+    max-height: none;
+    overflow: visible;
+    padding: 20px 5% 40px;
+}
+
+/* Мобильная версия - 1 колонка */
+@media (max-width: 768px) {
+    .cakes {
+        grid-template-columns: 1fr;
+        width: 100%;
+        padding: 20px 2.5% 40px;
+        gap: 20px;
+    }
+    
+    .hidden-cakes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        grid-template-columns: 1fr;
+        width: 100%;
+        padding: 0 2.5%;
+        gap: 20px;
+    }
+
+    .hidden-cakes.show {
+        padding: 20px 2.5%;
+    }
+   
+    .cake-card {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+    .order-btn{
+        height: 48px;
+        margin: 10px auto;
+        width:100%;
+    }
+    .cake-image-container {
+        height: auto;
+        aspect-ratio: 4/3;
+    }
+    .cake-content {
+        height: auto;
+        padding: 5px;
+    }
+    .cake-image-back p{
+        font-size: 140%;
+    }
+    .cake-calories{
+        font-size: 140%;
+    }
+}
+
+/* Планшетная версия - 2 колонки */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .cakes {
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        padding: 0 2.5%;
+        gap: 25px;
+    }
+    
+    .hidden-cakes {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        padding: 0 2.5%;
+        gap: 25px;
+    }
+
+    .hidden-cakes.show {
+        padding: 20px 2.5% 40px;
+    }
+    .order-btn{
+        height: 59px;
+        margin: 10px auto;
+    }
+    .cake-card {
+        width: 100%;
+    }
+    .cake-image-back p{
+        font-size: 115%;
+    }
+    .cake-calories{
+        font-size: 115%;
+    }
+}
+
+/* Десктопная версия - 4 колонки */
+@media (min-width: 1025px) {
+    .cakes {
+        grid-template-columns: repeat(4, 1fr);
+        width: 100%;
+        padding: 0 5%;
+        gap: 30px;
+    }
+    
+    .hidden-cakes {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        width: 100%;
+        padding: 0 5%;
+        gap: 30px;
+    }
+
+    .hidden-cakes.show {
+        padding: 20px 5% 40px;
+    }
+
+    .cake-card {
+        width: 100%;
+    }
+}
